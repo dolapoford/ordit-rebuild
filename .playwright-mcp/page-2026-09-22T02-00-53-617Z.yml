@@ -1,0 +1,319 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - navigation "Main" [ref=e4]:
+        - link "OrditAI home" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "OrditAI" [ref=e6]
+        - list [ref=e7]:
+          - listitem [ref=e8]:
+            - link "Platform" [ref=e9] [cursor=pointer]:
+              - /url: "#workflow"
+          - listitem [ref=e10]:
+            - link "For firms" [ref=e11] [cursor=pointer]:
+              - /url: /for-firms
+          - listitem [ref=e12]:
+            - link "Security" [ref=e13] [cursor=pointer]:
+              - /url: /security
+          - listitem [ref=e14]:
+            - link "Pricing" [ref=e15] [cursor=pointer]:
+              - /url: /pricing
+          - listitem [ref=e16]:
+            - link "About" [ref=e17] [cursor=pointer]:
+              - /url: "#about"
+        - generic [ref=e18]:
+          - link "Sign in" [ref=e19] [cursor=pointer]:
+            - /url: /sign-in
+          - link "Book a demo" [ref=e20] [cursor=pointer]:
+            - /url: "#contact"
+    - main [ref=e21]:
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - paragraph [ref=e26]: AI preparer for modern audit teams
+          - heading "George prepares. You review. You sign." [level=1] [ref=e27]: George prepares.You review.You sign.
+          - paragraph [ref=e28]: George is an AI preparer, not an AI auditor. He does the work a first-year associate does, then he stops. The signature stays yours.
+          - generic [ref=e29]:
+            - link "Start free" [ref=e30] [cursor=pointer]:
+              - /url: /sign-up
+            - link "See what George does" [ref=e31] [cursor=pointer]:
+              - /url: "#how-it-works"
+          - list [ref=e32]:
+            - listitem [ref=e33]: Shows his working
+            - listitem [ref=e37]: Every line attributed
+            - listitem [ref=e41]: Never signs an opinion
+        - generic [ref=e45]:
+          - img "George, the AI preparer, smiling with arms crossed" [ref=e47]
+          - generic [ref=e48]:
+            - generic [ref=e51]:
+              - paragraph [ref=e52]: Prepared by
+              - paragraph [ref=e53]: George · 14 Mar, 09:42
+            - generic [ref=e57]:
+              - paragraph [ref=e58]: Reviewed by
+              - paragraph [ref=e59]: Awaiting your review
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - paragraph [ref=e64]: Who George is
+          - heading [level=2] [ref=e67]:
+            - text: A colleague with one
+            - emphasis [ref=e68]: job
+            - text: ", and one thing he is never allowed to do."
+          - paragraph [ref=e69]: Audit already has a word for someone who does the work and hands it up for review. George is that person, and nothing more than that person.
+        - generic [ref=e70]:
+          - article [ref=e71]:
+            - paragraph [ref=e72]:
+              - generic [ref=e73]: "01"
+              - text: A preparer, not an auditor
+            - img "A working paper checklist beside George, smiling with arms crossed" [ref=e76]
+            - heading "A preparer, not an auditor" [level=3] [ref=e77]
+            - paragraph [ref=e78]: Audit already has this role. A junior prepares the workpaper; a senior reviews and signs it. George is the junior — tireless, consistent, and always working under review.
+          - article [ref=e79]:
+            - paragraph [ref=e80]:
+              - generic [ref=e81]: "02"
+              - text: He shows his working
+            - 'img "Four completed steps: sample drawn, evidence tied, calculation reperformed, exceptions flagged" [ref=e84]'
+            - heading "He shows his working" [level=3] [ref=e85]
+            - paragraph [ref=e86]: Sampling, tie-outs, reperformance, exceptions against materiality, a drafted conclusion. Every step is attributed to him, timestamped, and open for you to change.
+          - article [ref=e87]:
+            - paragraph [ref=e88]:
+              - generic [ref=e89]: "03"
+              - text: He never signs
+            - 'img "Prepared by George, reviewed by: awaiting your review" [ref=e92]'
+            - generic [aria-hidden]:
+              - paragraph: Humanoversight always
+            - heading "He never signs" [level=3] [ref=e93]
+            - paragraph [ref=e94]: There is one line in the file George cannot reach. The opinion carries a human name, because a human carries the liability — and no amount of accuracy transfers that.
+      - generic [ref=e97]:
+        - generic [ref=e98]:
+          - paragraph [ref=e99]: The challenge
+          - heading "An audit isn’t a prompt. It’s a process." [level=2] [ref=e100]: An audit isn’t a prompt.It’s a process.
+          - paragraph [ref=e101]: Audits move through planning, risk assessment, procedures, evidence, review, findings and reporting. Today, that work is often scattered across tools, files and people. Ordit brings it all together in one connected environment.
+        - generic [ref=e102]:
+          - generic [ref=e103]:
+            - generic [ref=e104]: The old way
+            - heading "Fragmented. Time-consuming. Hard to track." [level=3] [ref=e105]
+            - paragraph [ref=e106]: Files in different tools. Conversations in different places. Critical context gets lost.
+            - img "Emails, spreadsheets, documents, team chats, workpapers, findings and meetings scattered across separate tools" [ref=e108]
+          - generic [ref=e113]:
+            - generic [ref=e114]: With OrditAI
+            - heading "One engagement. Everything connected." [level=3] [ref=e115]
+            - paragraph [ref=e116]: Keep your documents, workpapers, communications, findings and history in one place — with AI and your team working together.
+            - img "OrditAI engagement dashboard for ACME Holdings 2025 Audit, showing progress, recent activity and key items" [ref=e118]
+        - generic [ref=e119]:
+          - paragraph [ref=e120]: Built for the way audit teams really work
+          - paragraph [ref=e122]: People · Process · Evidence · Trust
+      - region "The audit workflow, stage by stage" [ref=e125]:
+        - generic [ref=e126]:
+          - paragraph [ref=e128]: 00 / 07
+          - list [aria-hidden] [ref=e130]:
+            - listitem [ref=e131]:
+              - generic [ref=e132]: Initiation
+            - listitem [ref=e136]:
+              - generic [ref=e137]: Planning
+            - listitem [ref=e141]:
+              - generic [ref=e142]: Risk
+            - listitem [ref=e146]:
+              - generic [ref=e147]: Execution
+            - listitem [ref=e151]:
+              - generic [ref=e152]: Review
+            - listitem [ref=e156]:
+              - generic [ref=e157]: Close-out
+            - listitem [ref=e161]:
+              - generic [ref=e162]: Reporting
+          - generic [ref=e165]:
+            - article [ref=e166]:
+              - heading "An audit engagement, end to end." [level=2] [ref=e167]: An audit engagement,end to end.
+              - paragraph [ref=e168]: Seven stages, in the order an audit actually runs. Each one names what happens inside it, what George is allowed to touch, and whether it works in the product today.
+              - paragraph [ref=e169]: Engagement · Planning · Risk · Execution · Review · Close-out · Reporting
+            - article [ref=e170]:
+              - generic [aria-hidden]: "01"
+              - generic [ref=e171]:
+                - paragraph [ref=e172]: Stage 1 of 7
+                - heading "Initiation." [level=3] [ref=e173]
+                - paragraph [ref=e174]: Before any work, the ground rules.
+                - list [ref=e175]:
+                  - listitem [ref=e176]: client, scope and independence checks confirmed
+                  - listitem [ref=e178]: the team assigned, and who reviews whom
+                  - listitem [ref=e180]: last year's file linked, so nothing starts from zero
+                  - listitem [ref=e182]: the client and engagement hierarchy this sits in is in development
+            - article [ref=e184]:
+              - generic [aria-hidden]: "02"
+              - generic [ref=e185]:
+                - paragraph [ref=e186]: Stage 2 of 7
+                - heading "Planning." [level=3] [ref=e187]
+                - paragraph [ref=e188]: Last year's thinking, carried forward.
+                - list [ref=e189]:
+                  - listitem [ref=e190]: materiality and performance materiality set
+                  - listitem [ref=e192]: prior-year planning rolled forward for review, not re-typed
+                  - listitem [ref=e194]: the procedure list drawn from it
+            - article [ref=e196]:
+              - generic [aria-hidden]: "03"
+              - generic [ref=e197]:
+                - paragraph [ref=e198]: Stage 3 of 7
+                - heading "Risk." [level=3] [ref=e199]
+                - paragraph [ref=e200]: The rating decides how hard you look.
+                - list [ref=e201]:
+                  - listitem [ref=e202]: risks identified and rated against the engagement
+                  - listitem [ref=e204]: testing depth follows the rating
+                  - listitem [ref=e206]: defining your own factors and weightings is in development
+            - article [ref=e208]:
+              - generic [aria-hidden]: "04"
+              - generic [ref=e209]:
+                - paragraph [ref=e210]: Stage 4 of 7
+                - heading "Execution." [level=3] [ref=e211]
+                - paragraph [ref=e212]: George does the work, and shows it.
+                - list [ref=e213]:
+                  - listitem [ref=e214]: sample selected and stratified from the population
+                  - listitem [ref=e216]: each item traced to contract, delivery note and remittance
+                  - listitem [ref=e218]: exceptions flagged against materiality, conclusion drafted
+                - generic [ref=e220]:
+                  - generic [ref=e223]:
+                    - paragraph [ref=e224]: Prepared by
+                    - paragraph [ref=e225]: George · 14 Mar, 09:42
+                  - generic [ref=e229]:
+                    - paragraph [ref=e230]: Reviewed by
+                    - paragraph [ref=e231]: Awaiting your review
+            - article [ref=e232]:
+              - generic [aria-hidden]: "05"
+              - generic [ref=e233]:
+                - paragraph [ref=e234]: Stage 5 of 7
+                - heading "Review." [level=3] [ref=e235]
+                - paragraph [ref=e236]: Nothing is accepted until you accept it.
+                - list [ref=e237]:
+                  - listitem [ref=e238]: accept, edit or reject each drafted conclusion
+                  - listitem [ref=e240]: a rejection is recorded with your reason, and George reworks from it
+                  - listitem [ref=e242]: editing inside the procedure, and the sign-off history behind it, are in development
+            - article [ref=e244]:
+              - generic [aria-hidden]: "06"
+              - generic [ref=e245]:
+                - paragraph [ref=e246]: Stage 6 of 7
+                - heading "Close-out." [level=3] [ref=e247]
+                - paragraph [ref=e248]: The file will not close while anything is open.
+                - list [ref=e249]:
+                  - listitem [ref=e250]: mandatory procedures, outstanding evidence and findings must clear
+                  - listitem [ref=e252]: the incomplete items are named, not just counted
+                  - listitem [ref=e254]: partner approval before the engagement closes
+            - article [ref=e256]:
+              - generic [aria-hidden]: "07"
+              - generic [ref=e257]:
+                - paragraph [ref=e258]: Stage 7 of 7
+                - heading "Reporting." [level=3] [ref=e259]
+                - paragraph [ref=e260]: Every figure, back to the procedure that produced it.
+                - list [ref=e261]:
+                  - listitem [ref=e262]: findings cross-reference into the report
+                  - listitem [ref=e264]: report versions kept, with what changed between them
+                  - listitem [ref=e266]: references are produced after the audit today
+      - generic [ref=e270]:
+        - generic [ref=e271]:
+          - paragraph [ref=e272]: Human in the loop, structurally
+          - heading "George occupies the prepared-by line. Never the reviewed-by line." [level=2] [ref=e274]:
+            - text: George occupies the prepared-by line.
+            - generic [ref=e275]: Never the reviewed-by line.
+          - paragraph [ref=e276]:
+            - text: An auditor signs the opinion and carries the liability. That cannot be delegated to software, so Ordit never asks you to.
+            - strong [ref=e277]: AI-authored work
+            - text: sits on its own tinted ground and is never mistaken for yours — and the reviewed-by line stays empty until a person fills it.
+        - img "A prepared-by line filled in by George, and a reviewed-by line reading “Awaiting your review”" [ref=e279]
+      - generic [ref=e282]:
+        - generic [ref=e283]:
+          - paragraph [ref=e284]: Defensible by construction
+          - heading "If it is in the file, you can prove where it came from." [level=2] [ref=e287]
+          - paragraph [ref=e288]: Three capabilities at three different stages.
+        - generic [ref=e289]:
+          - article [ref=e290]:
+            - img "Evidence files — contract, spreadsheet, email, deck and report — each marked as received, with an add-file slot" [ref=e292]
+            - heading "Evidence room" [level=3] [ref=e293]
+            - paragraph [ref=e294]: Upload contracts, spreadsheets, decks and mail against an engagement, and add the data fields you need.
+          - article [ref=e295]:
+            - 'img "Finding #12 linked to its related procedure, source document and report reference" [ref=e297]'
+            - heading "Cross-references" [level=3] [ref=e298]
+            - paragraph [ref=e299]: "Finding #12 traces to the procedure that raised it, the contract beneath it, and the report version that carries it."
+          - article [ref=e300]:
+            - 'img "A timeline of engagement activity: file uploaded, procedure updated, finding created, reviewed by partner" [ref=e302]'
+            - heading "Activity trail" [level=3] [ref=e303]
+            - paragraph [ref=e304]: Audit activity is tracked across the engagement as the work happens.
+      - generic [ref=e307]:
+        - generic [ref=e308]:
+          - generic [ref=e309]:
+            - paragraph [ref=e310]: FOR FIRMS
+            - heading "Built for the way audit firms actually work." [level=2] [ref=e312]
+          - generic [ref=e313]:
+            - paragraph [ref=e314]: Your organisation, your roles and your separation rules — inherited from the identity you already use, and enforced on every engagement.
+            - link "Explore for firms" [ref=e315] [cursor=pointer]:
+              - /url: /for-firms
+        - generic [ref=e316]:
+          - article [ref=e317]:
+            - heading "Single sign-on" [level=3] [ref=e322]
+            - paragraph [ref=e323]: Sign in with Microsoft Entra ID and inherit the roles and groups people already hold.
+          - article [ref=e324]:
+            - heading "Roles & permissions" [level=3] [ref=e331]
+            - paragraph [ref=e332]: Partner, manager, senior, reviewer, read-only. What a person can do follows their role.
+          - article [ref=e333]:
+            - heading "Engagement separation" [level=3] [ref=e339]
+            - paragraph [ref=e340]: Every client and engagement is its own workspace. People see only what they are invited to.
+          - article [ref=e341]:
+            - heading "Complete audit trail" [level=3] [ref=e346]
+            - paragraph [ref=e347]: Every action, change and sign-off — logged, searchable, and restricted by role.
+      - generic [ref=e350]:
+        - heading "Put George on your next engagement." [level=2] [ref=e351]:
+          - text: Put George on your
+          - generic [ref=e352]: next engagement.
+        - paragraph [ref=e353]: Start on your own engagement today, or bring George to the whole firm.
+        - generic [ref=e354]:
+          - link "Book a demo" [ref=e355] [cursor=pointer]:
+            - /url: "#contact"
+          - link "Start free" [ref=e356] [cursor=pointer]:
+            - /url: /sign-up
+    - contentinfo [ref=e357]:
+      - generic [ref=e358]:
+        - generic [ref=e359]:
+          - generic [ref=e360]:
+            - link "OrditAI home" [ref=e361] [cursor=pointer]:
+              - /url: /
+              - img "OrditAI" [ref=e362]
+            - paragraph [ref=e363]: AI that works with you, so you stay in control.
+            - link "Book a demo" [ref=e364] [cursor=pointer]:
+              - /url: "#contact"
+          - generic [ref=e365]:
+            - navigation "Product" [ref=e366]:
+              - paragraph [ref=e367]: Product
+              - list [ref=e368]:
+                - listitem [ref=e369]:
+                  - link "How it works" [ref=e370] [cursor=pointer]:
+                    - /url: /#workflow
+                - listitem [ref=e371]:
+                  - link "For firms" [ref=e372] [cursor=pointer]:
+                    - /url: /for-firms
+                - listitem [ref=e373]:
+                  - link "Security" [ref=e374] [cursor=pointer]:
+                    - /url: /security
+                - listitem [ref=e375]:
+                  - link "Pricing" [ref=e376] [cursor=pointer]:
+                    - /url: /pricing
+            - navigation "Company" [ref=e377]:
+              - paragraph [ref=e378]: Company
+              - list [ref=e379]:
+                - listitem [ref=e380]:
+                  - link "About" [ref=e381] [cursor=pointer]:
+                    - /url: /#about
+                - listitem [ref=e382]:
+                  - link "Contact" [ref=e383] [cursor=pointer]:
+                    - /url: /#contact
+                - listitem [ref=e384]:
+                  - link "Sign in" [ref=e385] [cursor=pointer]:
+                    - /url: /sign-in
+            - navigation "Legal" [ref=e386]:
+              - paragraph [ref=e387]: Legal
+              - list [ref=e388]:
+                - listitem [ref=e389]:
+                  - link "Privacy" [ref=e390] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e391]:
+                  - link "Terms" [ref=e392] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e393]:
+                  - link "Cookies" [ref=e394] [cursor=pointer]:
+                    - /url: "#"
+        - generic [ref=e395]:
+          - paragraph [ref=e396]: © 2026 OrditAI
+          - paragraph [ref=e397]: Built for audit firms
+  - button "Open Next.js Dev Tools" [ref=e403] [cursor=pointer]

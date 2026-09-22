@@ -1,0 +1,42 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e2]:
+    - banner [ref=f2e3]:
+      - navigation "Main" [ref=f2e4]:
+        - link "OrditAI home" [ref=f2e5] [cursor=pointer]:
+          - /url: /
+          - img "OrditAI" [ref=f2e6]
+        - list [ref=f2e7]:
+          - listitem [ref=f2e8]:
+            - link "Platform" [ref=f2e9] [cursor=pointer]:
+              - /url: "#workflow"
+          - listitem [ref=f2e10]:
+            - link "For firms" [ref=f2e11] [cursor=pointer]:
+              - /url: /for-firms
+          - listitem [ref=f2e12]:
+            - link "Security" [ref=f2e13] [cursor=pointer]:
+              - /url: /security
+          - listitem [ref=f2e14]:
+            - link "Pricing" [ref=f2e15] [cursor=pointer]:
+              - /url: /pricing
+          - listitem [ref=f2e16]:
+            - link "About" [ref=f2e17] [cursor=pointer]:
+              - /url: "#about"
+        - generic [ref=f2e18]:
+          - link "Sign in" [ref=f2e19] [cursor=pointer]:
+            - /url: /sign-in
+          - link "Book a demo" [ref=f2e21] [cursor=pointer]:
+            - /url: "#contact"
+    - main [ref=f2e22]:
+      - heading "Built for the way audit firms actually work." [level=1] [ref=f2e25]:
+        - generic [ref=f2e26]: Built for the way
+        - generic [ref=f2e28]: audit firms actually work.
+      - img "Hierarchy from organisation to region, department, audit team, engagement and assigned users" [ref=f2e35]
+      - list [ref=f2e39]
+      - list [ref=f2e43]
+      - list [ref=f2e45]:
+        - listitem [ref=f2e46]
+        - listitem [ref=f2e47]
+        - listitem [ref=f2e48]
+        - listitem [ref=f2e49]
+    - contentinfo [ref=f2e51]
+  - button "Open Next.js Dev Tools" [ref=f2e60] [cursor=pointer]

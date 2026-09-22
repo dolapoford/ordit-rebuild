@@ -1,0 +1,109 @@
+- generic [active] [ref=f1e1]:
+  - generic [ref=f1e2]:
+    - banner [ref=f1e3]:
+      - navigation "Main" [ref=f1e4]:
+        - link "OrditAI home" [ref=f1e5] [cursor=pointer]:
+          - /url: /
+          - img "OrditAI" [ref=f1e6]
+        - link "Book a demo" [ref=f1e9] [cursor=pointer]:
+          - /url: "#contact"
+    - main [ref=f1e10]:
+      - generic [ref=f1e13]:
+        - paragraph [ref=f1e14]: AI preparer for modern audit teams
+        - heading "George prepares. You review. You sign." [level=1] [ref=f1e15]:
+          - generic [ref=f1e16]: George prepares.
+          - generic [ref=f1e18]: You review.
+          - generic [ref=f1e20]: You sign.
+      - heading "An audit isn’t a prompt. It’s a process." [level=2] [ref=f1e30]:
+        - generic [ref=f1e31]: An audit isn’t a prompt.
+        - generic [ref=f1e33]: It’s a process.
+      - region "The audit workflow, stage by stage" [ref=f1e36]:
+        - generic [ref=f1e38]:
+          - article [ref=f1e39]:
+            - heading "An audit engagement, end to end." [level=2] [ref=f1e40]: An audit engagement,end to end.
+            - paragraph [ref=f1e41]: Seven stages, in the order an audit actually runs. Each one names what happens inside it, what George is allowed to touch, and whether it works in the product today.
+            - paragraph [ref=f1e42]: Engagement · Planning · Risk · Execution · Review · Close-out · Reporting
+          - article [ref=f1e43]:
+            - generic [aria-hidden]: "01"
+            - generic [ref=f1e44]:
+              - paragraph [ref=f1e45]: Stage 1 of 7
+              - heading "Initiation." [level=3] [ref=f1e46]
+              - paragraph [ref=f1e47]: Before any work, the ground rules.
+              - list [ref=f1e48]:
+                - listitem [ref=f1e49]: client, scope and independence checks confirmed
+                - listitem [ref=f1e51]: the team assigned, and who reviews whom
+                - listitem [ref=f1e53]: last year's file linked, so nothing starts from zero
+                - listitem [ref=f1e55]: the client and engagement hierarchy this sits in is in development
+          - article [ref=f1e57]:
+            - generic [aria-hidden]: "02"
+            - generic [ref=f1e58]:
+              - paragraph [ref=f1e59]: Stage 2 of 7
+              - heading "Planning." [level=3] [ref=f1e60]
+              - paragraph [ref=f1e61]: Last year's thinking, carried forward.
+              - list [ref=f1e62]:
+                - listitem [ref=f1e63]: materiality and performance materiality set
+                - listitem [ref=f1e65]: prior-year planning rolled forward for review, not re-typed
+                - listitem [ref=f1e67]: the procedure list drawn from it
+          - article [ref=f1e69]:
+            - generic [aria-hidden]: "03"
+            - generic [ref=f1e70]:
+              - paragraph [ref=f1e71]: Stage 3 of 7
+              - heading "Risk." [level=3] [ref=f1e72]
+              - paragraph [ref=f1e73]: The rating decides how hard you look.
+              - list [ref=f1e74]:
+                - listitem [ref=f1e75]: risks identified and rated against the engagement
+                - listitem [ref=f1e77]: testing depth follows the rating
+                - listitem [ref=f1e79]: defining your own factors and weightings is in development
+          - article [ref=f1e81]:
+            - generic [aria-hidden]: "04"
+            - generic [ref=f1e82]:
+              - paragraph [ref=f1e83]: Stage 4 of 7
+              - heading "Execution." [level=3] [ref=f1e84]
+              - paragraph [ref=f1e85]: George does the work, and shows it.
+              - list [ref=f1e86]:
+                - listitem [ref=f1e87]: sample selected and stratified from the population
+                - listitem [ref=f1e89]: each item traced to contract, delivery note and remittance
+                - listitem [ref=f1e91]: exceptions flagged against materiality, conclusion drafted
+              - generic [ref=f1e93]:
+                - generic [ref=f1e96]:
+                  - paragraph [ref=f1e97]: Prepared by
+                  - paragraph [ref=f1e98]: George · 14 Mar, 09:42
+                - generic [ref=f1e102]:
+                  - paragraph [ref=f1e103]: Reviewed by
+                  - paragraph [ref=f1e104]: Awaiting your review
+          - article [ref=f1e105]:
+            - generic [aria-hidden]: "05"
+            - generic [ref=f1e106]:
+              - paragraph [ref=f1e107]: Stage 5 of 7
+              - heading "Review." [level=3] [ref=f1e108]
+              - paragraph [ref=f1e109]: Nothing is accepted until you accept it.
+              - list [ref=f1e110]:
+                - listitem [ref=f1e111]: accept, edit or reject each drafted conclusion
+                - listitem [ref=f1e113]: a rejection is recorded with your reason, and George reworks from it
+                - listitem [ref=f1e115]: editing inside the procedure, and the sign-off history behind it, are in development
+          - article [ref=f1e117]:
+            - generic [aria-hidden]: "06"
+            - generic [ref=f1e118]:
+              - paragraph [ref=f1e119]: Stage 6 of 7
+              - heading "Close-out." [level=3] [ref=f1e120]
+              - paragraph [ref=f1e121]: The file will not close while anything is open.
+              - list [ref=f1e122]:
+                - listitem [ref=f1e123]: mandatory procedures, outstanding evidence and findings must clear
+                - listitem [ref=f1e125]: the incomplete items are named, not just counted
+                - listitem [ref=f1e127]: partner approval before the engagement closes
+          - article [ref=f1e129]:
+            - generic [aria-hidden]: "07"
+            - generic [ref=f1e130]:
+              - paragraph [ref=f1e131]: Stage 7 of 7
+              - heading "Reporting." [level=3] [ref=f1e132]
+              - paragraph [ref=f1e133]: Every figure, back to the procedure that produced it.
+              - list [ref=f1e134]:
+                - listitem [ref=f1e135]: findings cross-reference into the report
+                - listitem [ref=f1e137]: report versions kept, with what changed between them
+                - listitem [ref=f1e139]: references are produced after the audit today
+      - heading "Put George on your next engagement." [level=2] [ref=f1e157]:
+        - text: Put George on your
+        - generic [ref=f1e158]: next engagement.
+    - contentinfo [ref=f1e159]
+  - button "Open Next.js Dev Tools" [ref=f1e168] [cursor=pointer]
+  - alert [ref=f1e172]

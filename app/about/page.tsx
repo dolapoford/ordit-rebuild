@@ -22,7 +22,7 @@ export default function AboutPage() {
         <AboutHero />
         <AboutWhy />
         <AboutCommitments />
-        <AboutTeam />
+        {/* <AboutTeam /> */}
         <AboutCta />
       </main>
       <Footer />

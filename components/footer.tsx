@@ -19,7 +19,8 @@ const COLUMNS = [
   {
     title: "Product",
     links: [
-      { label: "How it works", href: "/#workflow" },
+      { label: "Accounting", href: "/accounting" },
+       { label: "Auditing", href: "/audit" },
       { label: "For firms", href: "/for-firms" },
       { label: "Security", href: "/security" },
       { label: "Pricing", href: "/pricing" },
@@ -29,7 +30,7 @@ const COLUMNS = [
     title: "Company",
     links: [
       { label: "About", href: "/about" },
-      { label: "Contact", href: "/#contact" },
+      { label: "Contact", href: "/contact" },
       { label: "Sign in", href: "/sign-in" },
     ],
   },
@@ -98,10 +99,10 @@ export function Footer() {
             </p>
             <Press className="mt-8">
               <Link
-                href="#contact"
+                href="/contact"
                 className={cn(
                   buttonVariants(),
-                  "rounded-full px-8 shadow-[0_12px_28px_-8px_rgba(76,45,204,0.5)]",
+                  "px-8",
                 )}
               >
                 Book a demo

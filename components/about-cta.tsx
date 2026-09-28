@@ -47,10 +47,11 @@ export function AboutCta() {
   return (
     <div ref={scopeRef} className="contents">
       <CtaPanel
-        panelClassName="bg-violet-50"
-        heading="Put George on your next engagement."
+        panelClassName="bg-cover bg-center"
+        panelStyle={{ backgroundImage: "url(/Cta-bg.png)" }}
+        heading="Put George on the next close, and the next file."
         description="He drafts. You review. You sign. The file shows the rest."
-        primary={{ label: "Start free", href: "#contact", icon: false }}
+        primary={{ label: "Start free", href: "/sign-up", icon: false }}
         secondary={{ label: "Talk to us", href: "#contact" }}
       />
     </div>

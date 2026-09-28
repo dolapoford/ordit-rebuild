@@ -60,30 +60,27 @@ export function ForFirmsHero() {
       className="site-gutter relative flex min-h-[560px] items-center overflow-hidden bg-neutral-25 py-16 md:bg-[url('/firm-hero.png')] md:bg-cover md:bg-position-[70%_center] lg:min-h-155 lg:bg-right"
     >
       <div className="mx-auto w-full max-w-[1280px]">
-        <p ref={eyebrowRef} className="type-label flex items-center gap-3 text-violet">
+        <p ref={eyebrowRef} className="type-label text-violet">
           For firms
-          <span className="h-px w-10 bg-violet" aria-hidden />
         </p>
 
         <h1 className="type-display mt-6 text-ink">
           <span className="block overflow-hidden">
-            <span className="ff-hero-line block">Built for the way</span>
+            <span className="ff-hero-line block">Built for teams who share a file</span>
           </span>
           <span className="block overflow-hidden">
-            <span className="ff-hero-line block text-violet-700">audit firms actually work.</span>
+            <span className="ff-hero-line block text-violet">and share the liability.</span>
           </span>
         </h1>
 
         <p ref={bodyRef} className="type-lead mt-7 max-w-[36rem] text-body">
-          Sign in with the identity you already use. Mirror your organisation,
-          your roles and your teams. Keep every client and engagement apart —
-          and see all of it from one place.
+         One person can hold an engagement, or a set of books, in their head. A firm cannot. Below is what Ordit does for teams today, and what we are building next — marked so you can tell the difference.
         </p>
 
         <div ref={ctaRef} className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-4">
           <div ref={primaryRef}>
             <Press hoverScale={1.03} className="max-sm:w-full">
-              <Link href="#contact" className={cn(buttonVariants(), "max-sm:w-full")}>
+              <Link href="/contact" className={cn(buttonVariants(), "max-sm:w-full")}>
                 Book a demo
                 <ArrowRight aria-hidden />
               </Link>

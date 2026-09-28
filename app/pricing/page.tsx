@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
+import { PricingBillingProvider } from "@/components/pricing-billing-context";
 import { PricingHero } from "@/components/pricing-hero";
 import { PricingIncluded } from "@/components/pricing-included";
 import { PricingPlans } from "@/components/pricing-plans";
@@ -19,12 +20,14 @@ export default function PricingPage() {
     <div className="flex flex-1 flex-col bg-white">
       <Navbar />
       <main>
-        <Reveal trigger="load">
-          <PricingHero />
-        </Reveal>
-        <Reveal>
-          <PricingPlans />
-        </Reveal>
+        <PricingBillingProvider>
+          <Reveal trigger="load">
+            <PricingHero />
+          </Reveal>
+          <Reveal>
+            <PricingPlans />
+          </Reveal>
+        </PricingBillingProvider>
         <Reveal>
           <PricingIncluded />
         </Reveal>

@@ -9,11 +9,11 @@ import { useCardStagger } from "@/hooks/use-card-stagger";
 const CARDS = [
   {
     step: "01",
-    label: "A preparer, not an auditor",
+    label: "A preparer, not a signer",
     image: "/paper.png",
     alt: "A working paper checklist beside George, smiling with arms crossed",
-    title: "A preparer, not an auditor",
-    body: "Audit already has this role. A junior prepares the workpaper; a senior reviews and signs it. George is the junior — tireless, consistent, and always working under review.",
+    title: "A preparer, not a signer",
+    body: "Both sides of the profession already have this role. A junior prepares the workpaper and a senior signs it; an accountant drafts the entry and a controller approves it. George is the one doing the preparing — tireless, consistent, and always working under review.",
   },
   {
     step: "02",
@@ -21,7 +21,7 @@ const CARDS = [
     image: "/data.png",
     alt: "Four completed steps: sample drawn, evidence tied, calculation reperformed, exceptions flagged",
     title: "He shows his working",
-    body: "Sampling, tie-outs, reperformance, exceptions against materiality, a drafted conclusion. Every step is attributed to him, timestamped, and open for you to change.",
+    body: "Sampling, tie-outs, reperformance and a drafted conclusion on an engagement. Journals and a drafted statement in the books. Every step is attributed to him, timestamped, and open for you to change.",
   },
   {
     step: "03",
@@ -29,7 +29,7 @@ const CARDS = [
     image: "/review.png",
     alt: "Prepared by George, reviewed by: awaiting your review",
     title: "He never signs",
-    body: "There is one line in the file George cannot reach. The opinion carries a human name, because a human carries the liability — and no amount of accuracy transfers that.",
+    body: "There is one line George cannot reach. The opinion carries a human name and so does the approved entry, because a person carries the liability for both — and no amount of accuracy transfers that.",
     note: true,
   },
 ];
@@ -48,10 +48,8 @@ export function WhoGeorgeIs() {
     >
       <div className="mx-auto max-w-[1280px]">
         <div ref={headerRef} className="mx-auto max-w-3xl text-center">
-          <p className="type-label flex items-center justify-center gap-4 text-violet">
-            <span className="h-px w-10 bg-neutral-300" aria-hidden />
+          <p className="type-label text-violet">
             Who George is
-            <span className="h-px w-10 bg-neutral-300" aria-hidden />
           </p>
 
           <h2 className="type-h2 mt-5 text-ink">
@@ -61,14 +59,11 @@ export function WhoGeorgeIs() {
           </h2>
 
           <p className="type-lead mx-auto mt-5 max-w-[36rem] text-body">
-            Audit already has a word for someone who does the work and hands it
-            up for review. George is that person, and nothing more than that
-            person.
+            Accounting and audit both already have a word for someone who does the work and hands it up for review. George is that person, and nothing more than that person.
           </p>
         </div>
 
-        {/* Cards hug vertically — uneven bottoms are correct */}
-        <div ref={gridRef} className="mt-12 grid items-start gap-5 md:grid-cols-2 lg:mt-16 lg:grid-cols-3">
+        <div ref={gridRef} className="mt-12 grid gap-5 md:grid-cols-2 lg:mt-16 lg:grid-cols-3">
           {CARDS.map((card) => (
             <article
               key={card.step}

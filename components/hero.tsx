@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import Image from "next/image";
@@ -17,7 +17,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 const FACTS = [
   { icon: FileText, label: "Shows his working" },
   { icon: Link2, label: "Every line attributed" },
-  { icon: ShieldCheck, label: "Never signs an opinion" },
+  { icon: ShieldCheck, label: "Never approves his own work" },
 ];
 
 /**
@@ -32,7 +32,6 @@ export function Hero() {
   const ctaRef = useRef<HTMLDivElement>(null);
   const factsRef = useRef<HTMLUListElement>(null);
   const georgeRef = useRef<HTMLDivElement>(null);
-  const stampRef = useRef<HTMLDivElement>(null);
 
   // On-load choreography: eyebrow → headline lines → body → CTA → facts →
   // George → the attribution stamp riding on his panel.
@@ -56,12 +55,6 @@ export function Hero() {
           { autoAlpha: 0, scale: 0.94, y: 30 },
           { autoAlpha: 1, scale: 1, y: 0, duration: 0.8 },
           "-=0.4",
-        )
-        .fromTo(
-          stampRef.current,
-          { autoAlpha: 0, y: 15, scale: 0.96 },
-          { autoAlpha: 1, y: 0, scale: 1, duration: 0.6 },
-          "-=0.35",
         );
     },
     { scope: sectionRef },
@@ -76,18 +69,17 @@ export function Hero() {
 
       const trigger = { trigger: sectionRef.current, start: "top top", end: "bottom top", scrub: true };
       gsap.to(georgeRef.current, { y: -20, ease: "none", scrollTrigger: trigger });
-      gsap.to(stampRef.current, { y: -36, ease: "none", scrollTrigger: { ...trigger } });
     },
     { scope: sectionRef },
   );
 
   return (
     <section ref={sectionRef} className="site-gutter bg-white pb-13 pt-8 lg:pb-[104px] lg:pt-14">
-      <div className="mx-auto grid max-w-[1280px] items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+      <div className="mx-auto grid max-w-[1280px] items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8">
         {/* Copy */}
         <div className="flex flex-col">
           <p ref={eyebrowRef} className="type-label text-violet">
-            AI preparer for modern audit teams
+            AI preparer
           </p>
 
           <h1 className="type-display mt-6 text-ink">
@@ -103,9 +95,7 @@ export function Hero() {
           </h1>
 
           <p ref={bodyRef} className="type-body mt-7 max-w-[30rem] text-body">
-            George is an AI preparer, not an AI auditor. He does the work a
-            first-year associate does, then he stops. The signature stays
-            yours.
+            George drafts the journal entry, gathers the evidence and writes up the procedure — you stay in control from review to sign-off.
           </p>
 
           {/* Primary first; on mobile both go full width and stack */}
@@ -124,7 +114,7 @@ export function Hero() {
                 href="#how-it-works"
                 className={`${buttonVariants({ variant: "outline" })} max-sm:w-full`}
               >
-                See what George does
+                See how it works
               </Link>
             </Press>
           </div>
@@ -142,34 +132,17 @@ export function Hero() {
           </ul>
         </div>
 
-        {/* Product panel: George on the AI surface, with the stamp */}
-        <div className="relative mx-auto w-full max-w-[520px] lg:max-w-none">
-          <div
-            ref={georgeRef}
-            className="relative flex h-[420px] items-end justify-center overflow-hidden rounded-xl bg-ai-surface sm:h-[500px] lg:h-[580px]"
-          >
-            <Image
-              src="/george.png"
-              alt="George, the AI preparer, smiling with arms crossed"
-              width={1024}
-              height={1536}
-              priority
-              sizes="(min-width: 1024px) 40vw, 90vw"
-              className="h-[108%] w-auto max-w-none translate-y-[6%]"
-            />
-          </div>
-
-          <div
-            ref={stampRef}
-            className="absolute bottom-6 left-4 w-[260px] shadow-none sm:left-6 lg:-left-8 lg:bottom-12 lg:w-[300px]"
-          >
-            <Image
-              src="/hero-review.png"
-              alt="Attribution stamp showing George's prepared work with a timestamp"
-              width={900}
-              height={369}
-            />
-          </div>
+        {/* Product visual: George with the status cards, composed in one image */}
+        <div ref={georgeRef} className="relative mx-auto w-full max-w-[560px] lg:max-w-none">
+          <Image
+            src="/testing-hero.png"
+            alt="George, the AI preparer, beside two status cards: journal entry prepared, and awaiting your review"
+            width={1374}
+            height={1145}
+            priority
+            sizes="(min-width: 1024px) 45vw, 90vw"
+            className="h-auto w-full"
+          />
         </div>
       </div>
     </section>
@@ -177,3 +150,4 @@ export function Hero() {
 }
 
 export default Hero;
+

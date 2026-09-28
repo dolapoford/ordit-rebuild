@@ -1,12 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import { Check } from "lucide-react";
 
+import { usePricingBilling } from "@/components/pricing-billing-context";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 type Plan = {
   name: string;
-  price: string;
+  monthlyPrice: number;
   description: string;
   features: string[];
   highlight?: boolean;
@@ -15,7 +18,7 @@ type Plan = {
 const PLANS: Plan[] = [
   {
     name: "Basic",
-    price: "$15.00",
+    monthlyPrice: 15,
     description:
       "For a solo practitioner who wants George on one engagement at a time.",
     features: [
@@ -29,7 +32,7 @@ const PLANS: Plan[] = [
   },
   {
     name: "Professional",
-    price: "$30.00",
+    monthlyPrice: 30,
     description:
       "For a small practice running several client engagements in parallel.",
     highlight: true,
@@ -44,7 +47,7 @@ const PLANS: Plan[] = [
   },
   {
     name: "Enterprise",
-    price: "$50.00",
+    monthlyPrice: 50,
     description:
       "For a firm that needs no ceiling on engagements, people or output.",
     features: [
@@ -58,18 +61,36 @@ const PLANS: Plan[] = [
   },
 ];
 
+/** Yearly billing is 2 months free — 10x the monthly rate per year. */
+const YEARLY_MONTHS = 10;
+
+const formatUsd = (amount: number) =>
+  new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(amount);
+
 /** Pricing page — three-tier plan grid. Professional is raised and coloured
  *  to read as the recommended tier; the other two share the plain card
  *  style used across the site (border-neutral-200 on white). */
 export function PricingPlans() {
+  const { period } = usePricingBilling();
+  const isYearly = period === "yearly";
+
   return (
     <section className="site-gutter bg-white pb-20 lg:pb-32">
       <ul className="mx-auto grid max-w-[1280px] gap-6 lg:grid-cols-3 lg:items-start">
-        {PLANS.map((plan) => (
+        {PLANS.map((plan) => {
+          const yearlyTotal = plan.monthlyPrice * YEARLY_MONTHS;
+          const displayPrice = isYearly ? yearlyTotal / 12 : plan.monthlyPrice;
+
+          return (
           <li
             key={plan.name}
             className={cn(
-              "relative flex flex-col rounded-site border p-8",
+              "relative flex flex-col rounded-site border card-pad",
               plan.highlight
                 ? "border-transparent bg-violet text-white lg:-my-6 lg:py-14"
                 : "border-neutral-200 bg-white",
@@ -92,7 +113,7 @@ export function PricingPlans() {
 
             <p className="mt-5 flex items-baseline gap-1.5">
               <span className="text-5xl font-bold tracking-[-0.02em]">
-                {plan.price}
+                {formatUsd(displayPrice)}
               </span>
               <span
                 className={cn(
@@ -102,6 +123,17 @@ export function PricingPlans() {
               >
                 /month
               </span>
+            </p>
+
+            <p
+              className={cn(
+                "mt-1.5 text-sm",
+                plan.highlight ? "text-white/60" : "text-neutral-400",
+              )}
+            >
+              {isYearly
+                ? `${formatUsd(yearlyTotal)} billed annually`
+                : "Billed monthly"}
             </p>
 
             <p
@@ -160,7 +192,8 @@ export function PricingPlans() {
               Full feature list on request
             </p>
           </li>
-        ))}
+          );
+        })}
       </ul>
 
       <p className="type-label mt-10 text-center text-neutral-400">

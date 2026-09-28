@@ -1,56 +1,39 @@
 "use client";
 
 import { useRef } from "react";
-import { Clock, Copy, Lock, type LucideIcon } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
+import { useSectionReveal } from "@/hooks/use-section-reveal";
+
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-const PILLARS: {
-  title: string;
-  body: string;
-  icon: LucideIcon;
-}[] = [
+const COMMITMENTS = [
   {
-    title: "Isolation",
-    body: "Every firm is its own tenant and every engagement its own workspace. Data never crosses either line.",
-    icon: Copy,
+    number: "01",
+    title: "Client data is separated",
+    body: "Data belonging to one client is separated from another’s at the tenant boundary, and from another person at your own firm by role and permission.",
   },
   {
-    title: "Access",
-    body: "Single sign-on, role-based permissions and field-level visibility decide exactly who sees what.",
-    icon: Lock,
+    number: "02",
+    title: "Access follows the role",
+    body: "A person sees the engagements they were invited to and nothing else, with access following the role they already hold at your firm — mapped from Microsoft Entra ID rather than maintained twice.",
   },
   {
-    title: "Accountability",
-    body: "Every action, every access and every administrative change is logged, searchable and visible in the app.",
-    icon: Clock,
+    number: "03",
+    title: "Audit activity is recorded",
+    body: "Audit activity is tracked across the engagement, working-paper access is restricted and logged by role, and administrative changes are visible in the app.",
   },
 ];
 
-function PillarIcon({ icon: Icon }: { icon: LucideIcon }) {
-  const reduced = useReducedMotion();
-  return (
-    <span className="pillar-icon flex size-16 items-center justify-center rounded-full bg-violet-50 text-violet">
-      <motion.span
-        className="flex items-center justify-center"
-        whileHover={reduced ? undefined : { scale: 1.05 }}
-        transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
-      >
-        <Icon aria-hidden className="size-7" strokeWidth={2} />
-      </motion.span>
-    </span>
-  );
-}
-
-/** Security page pillars — three columns separated by hairline dividers.
- *  Isolation → Access → Accountability reveal in sequence, each divider
- *  drawing in as the column after it appears. */
+/** Security page commitments — three numbered cards under a centred
+ *  heading. The cards rise in sequence as the grid enters view. */
 export function SecurityPillars() {
+  const headerRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLUListElement>(null);
+
+  useSectionReveal(headerRef, { targets: [".type-label", "h2", ".type-lead"] });
 
   useGSAP(
     () => {
@@ -59,53 +42,50 @@ export function SecurityPillars() {
       if (!cards.length) return;
       const compact = window.matchMedia("(max-width: 1023px)").matches;
 
-      const dividers = cards
-        .map((card) => card.querySelector(".pillar-divider"))
-        .filter((d): d is Element => Boolean(d));
-      if (dividers.length) gsap.set(dividers, { transformOrigin: "top" });
-
-      const tl = gsap.timeline({
-        scrollTrigger: { trigger: gridRef.current, start: "top 78%", once: true },
-        defaults: { ease: "power3.out" },
-      });
-
-      cards.forEach((card, i) => {
-        tl.from(card, { y: compact ? 18 : 25, autoAlpha: 0, duration: 0.55 }, i === 0 ? 0 : "-=0.3")
-          .from(card.querySelector(".pillar-icon"), { scale: 0.9, duration: 0.4, ease: "power2.out" }, "<");
-
-        const divider = card.querySelector(".pillar-divider");
-        if (divider) {
-          tl.fromTo(divider, { scaleY: 0 }, { scaleY: 1, duration: 0.5, ease: "power2.out" }, "<");
-        }
+      gsap.from(cards, {
+        y: compact ? 16 : 24,
+        autoAlpha: 0,
+        duration: 0.55,
+        ease: "power3.out",
+        stagger: 0.12,
+        scrollTrigger: { trigger: gridRef.current, start: "top 80%", once: true },
       });
     },
     { scope: gridRef },
   );
 
   return (
-    <section className="site-gutter bg-white pb-20 md:pb-28">
-      <ul ref={gridRef} className="mx-auto grid w-full max-w-[1280px] grid-cols-1 gap-12 md:grid-cols-3 md:gap-0">
-        {PILLARS.map(({ title, body, icon }, i) => (
-          <li
-            key={title}
-            className="relative md:px-12 md:first:pl-0 md:last:pr-0"
-          >
-            {i > 0 && (
-              <span
-                aria-hidden
-                className="pillar-divider absolute inset-y-0 left-0 hidden w-px bg-neutral-100 md:block"
-              />
-            )}
-            <PillarIcon icon={icon} />
-            <h2 className="mt-8 text-3xl font-semibold tracking-[-0.02em] text-ink">
-              {title}
-            </h2>
-            <p className="mt-4 max-w-[26rem] text-lg leading-[1.6] text-body">
-              {body}
-            </p>
-          </li>
-        ))}
-      </ul>
+    <section className="site-gutter site-section bg-white">
+      <div className="mx-auto max-w-[1280px]">
+        <div ref={headerRef} className="mx-auto max-w-3xl text-center">
+          <p className="type-label text-violet">
+            Built on three commitments
+          </p>
+          <h2 className="type-h2 mt-5 text-ink">
+            <span className="text-violet">Three commitments</span> the product
+            is built around.
+          </h2>
+          <p className="type-lead mx-auto mt-5 max-w-2xl text-body">
+            These describe how Ordit is designed to behave. They are stated here
+            as design intent and must be confirmed by Ordit before publication.
+          </p>
+        </div>
+
+        <ul ref={gridRef} className="mt-12 grid gap-5 md:grid-cols-3 lg:mt-16">
+          {COMMITMENTS.map(({ number, title, body }) => (
+            <li
+              key={number}
+              className="rounded-site border border-neutral-200 bg-neutral-25 card-pad"
+            >
+              <span className="flex size-[52px] items-center justify-center rounded-lg bg-violet-50 type-label text-violet">
+                {number}
+              </span>
+              <h3 className="type-h3 mt-6 text-ink">{title}</h3>
+              <p className="type-body-s mt-3 text-body">{body}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }

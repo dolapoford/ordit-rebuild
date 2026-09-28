@@ -154,7 +154,7 @@ export function EnterpriseControls() {
       <div className="relative mx-auto max-w-[1280px]">
         <div ref={headerRef} className="mx-auto max-w-[44rem] text-center">
           <p className="type-label text-violet">Enterprise controls</p>
-          <h2 className="type-h1 mt-5 text-ink">
+          <h2 className="type-h2 mt-5 text-ink">
             Everything a firm needs to run{" "}
             <span className="text-violet">audits at scale.</span>
           </h2>

@@ -1,17 +1,17 @@
 "use client";
 
-import { useState } from "react";
-
+import { usePricingBilling, type BillingPeriod } from "@/components/pricing-billing-context";
 import { cn } from "@/lib/utils";
 
-const OPTIONS = ["Monthly", "Yearly", "Extended access"] as const;
+const OPTIONS: { label: string; value: BillingPeriod }[] = [
+  { label: "Monthly", value: "monthly" },
+  { label: "Yearly", value: "yearly" },
+];
 
-/** Pricing page billing-period switch. Purely presentational for now — only
- *  monthly prices exist in PricingPlans, so switching tabs re-styles the
- *  active pill without changing the numbers below. Wire in Yearly/Extended
- *  pricing once that data exists. */
+/** Pricing page billing-period switch. Drives PricingPlans via
+ *  PricingBillingProvider — selecting Yearly changes the prices shown below. */
 export function PricingToggle() {
-  const [active, setActive] = useState<(typeof OPTIONS)[number]>("Monthly");
+  const { period, setPeriod } = usePricingBilling();
 
   return (
     <div
@@ -20,14 +20,14 @@ export function PricingToggle() {
       className="mx-auto mt-10 inline-flex items-center gap-1 rounded-full border border-neutral-200 bg-white p-1.5"
     >
       {OPTIONS.map((option) => {
-        const isActive = option === active;
+        const isActive = option.value === period;
         return (
           <button
-            key={option}
+            key={option.value}
             type="button"
             role="tab"
             aria-selected={isActive}
-            onClick={() => setActive(option)}
+            onClick={() => setPeriod(option.value)}
             className={cn(
               "type-body-s rounded-full px-6 py-2.5 font-medium whitespace-nowrap transition-colors duration-150 ease-out",
               isActive
@@ -35,7 +35,7 @@ export function PricingToggle() {
                 : "text-body hover:text-ink",
             )}
           >
-            {option}
+            {option.label}
           </button>
         );
       })}

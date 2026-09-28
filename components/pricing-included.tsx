@@ -32,7 +32,7 @@ export function PricingIncluded() {
         {POINTS.map((point) => (
           <li
             key={point}
-            className="rounded-site border border-neutral-200 bg-white p-6"
+            className="rounded-site border border-neutral-200 bg-white card-pad"
           >
             <span className="flex size-14 items-center justify-center rounded-full bg-violet-50 text-violet">
               <Check aria-hidden className="size-6" strokeWidth={2.5} />

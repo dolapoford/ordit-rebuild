@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Dialog } from "@base-ui/react/dialog";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -16,8 +16,14 @@ gsap.registerPlugin(useGSAP);
 // design.md §4.9 — six top-level items plus a primary CTA. Security sits at
 // top level because it is the first question this buyer asks. No Resources
 // menu until there is something behind it.
+const MODULE_LINKS = [
+  { label: "Accounting", href: "/accounting" },
+  { label: "Auditing", href: "/audit" },
+];
+
+const HOME_LINK = { label: "Home", href: "/" };
+
 const NAV_LINKS = [
-  { label: "How it works", href: "#workflow" },
   { label: "For firms", href: "/for-firms" },
   { label: "Security", href: "/security" },
   { label: "Pricing", href: "/pricing" },
@@ -71,6 +77,43 @@ export function Navbar() {
         </Link>
 
         <ul className="hidden items-center gap-8 lg:flex">
+          <li>
+            <Link
+              href={HOME_LINK.href}
+              className="type-body-s text-ink transition-colors duration-150 ease-out hover:text-violet"
+            >
+              {HOME_LINK.label}
+            </Link>
+          </li>
+
+          <li className="group relative">
+            <button
+              type="button"
+              className="type-body-s flex cursor-default items-center gap-1 text-ink transition-colors duration-150 ease-out group-hover:text-violet group-focus-within:text-violet"
+            >
+              Modules
+              <ChevronDown
+                aria-hidden
+                className="size-3.5 transition-transform duration-150 ease-out group-hover:rotate-180 group-focus-within:rotate-180"
+              />
+            </button>
+
+            <div className="invisible absolute top-full left-0 z-50 pt-3 opacity-0 transition-[opacity,visibility] duration-150 ease-out group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              <ul className="min-w-44 rounded-lg border border-neutral-200 bg-white p-1.5">
+                {MODULE_LINKS.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="type-body-s block rounded-md px-3 py-2.5 text-ink transition-colors duration-150 ease-out hover:bg-neutral-50 hover:text-violet"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </li>
+
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <Link
@@ -91,7 +134,7 @@ export function Navbar() {
             Sign in
           </Link>
           <Press>
-            <Link href="#contact" className={buttonVariants()}>
+            <Link href="/contact" className={buttonVariants()}>
               Book a demo
             </Link>
           </Press>
@@ -99,7 +142,7 @@ export function Navbar() {
           <Dialog.Root open={menuOpen} onOpenChange={setMenuOpen}>
             <Dialog.Trigger
               aria-label={menuOpen ? "Close menu" : "Open menu"}
-              className="flex size-10 shrink-0 items-center justify-center rounded-lg text-ink transition-colors duration-150 ease-out hover:bg-neutral-50 lg:hidden"
+              className="flex size-11 shrink-0 items-center justify-center rounded-lg text-ink transition-colors duration-150 ease-out hover:bg-neutral-50 lg:hidden"
             >
               {menuOpen ? (
                 <X aria-hidden className="size-6" />
@@ -110,10 +153,35 @@ export function Navbar() {
 
             <Dialog.Portal>
               <Dialog.Backdrop className="fixed inset-0 z-40 bg-ink/20 transition-opacity duration-200 ease-out data-ending-style:opacity-0 data-starting-style:opacity-0 lg:hidden" />
-              <Dialog.Popup className="site-gutter fixed inset-x-0 top-18 z-40 max-h-[calc(100dvh-72px)] overflow-y-auto border-t border-neutral-100 bg-white pt-2 pb-8 shadow-[0_12px_28px_-12px_rgba(3,1,36,0.12)] transition-[opacity,transform] duration-200 ease-out data-ending-style:-translate-y-2 data-ending-style:opacity-0 data-starting-style:-translate-y-2 data-starting-style:opacity-0 lg:hidden">
+              <Dialog.Popup className="site-gutter fixed inset-x-0 top-18 z-40 max-h-[calc(100dvh-72px)] overflow-y-auto border-t border-neutral-200 bg-white pt-2 pb-8 transition-[opacity,transform] duration-200 ease-out data-ending-style:-translate-y-2 data-ending-style:opacity-0 data-starting-style:-translate-y-2 data-starting-style:opacity-0 lg:hidden">
                 <Dialog.Title className="sr-only">Menu</Dialog.Title>
 
-                <ul className="flex flex-col divide-y divide-neutral-100">
+                <ul className="flex flex-col divide-y divide-neutral-200">
+                  <li>
+                    <Link
+                      href={HOME_LINK.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="type-h3 block py-4 text-ink transition-colors duration-150 ease-out hover:text-violet"
+                    >
+                      {HOME_LINK.label}
+                    </Link>
+                  </li>
+                  <li className="py-4">
+                    <p className="type-label text-neutral-400">Modules</p>
+                    <ul className="mt-2 flex flex-col">
+                      {MODULE_LINKS.map((link) => (
+                        <li key={link.href}>
+                          <Link
+                            href={link.href}
+                            onClick={() => setMenuOpen(false)}
+                            className="type-h3 block py-2 text-ink transition-colors duration-150 ease-out hover:text-violet"
+                          >
+                            {link.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
                   {NAV_LINKS.map((link) => (
                     <li key={link.href}>
                       <Link
@@ -127,7 +195,7 @@ export function Navbar() {
                   ))}
                 </ul>
 
-                <div className="mt-4 border-t border-neutral-100 pt-6">
+                <div className="mt-4 border-t border-neutral-200 pt-6">
                   <Link
                     href="/sign-in"
                     onClick={() => setMenuOpen(false)}

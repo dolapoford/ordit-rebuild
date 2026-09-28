@@ -48,24 +48,28 @@ export function AboutWhy() {
           </p>
 
           <div className="mt-6 flex flex-col gap-5">
-            <p className="text-lg leading-[1.6] text-body">
-              An auditor signs an opinion and carries personal liability for
-              it. When a file is questioned — by a regulator, a court, a
-              client — the auditor has to show how every conclusion was
-              reached and on what evidence. That is the job.
+            <p className="type-body text-body">
+              An accountant posts an entry and a controller certifies the
+              statements. An auditor signs an opinion and carries personal
+              liability for it. In both cases a name goes on the work, and when
+              the work is questioned — at close, in a review, by a regulator,
+              in a court — that person has to show how each figure was arrived
+              at and on what evidence.
             </p>
-            <p className="text-lg leading-[1.6] text-body">
+            <p className="type-body text-body">
               Most AI tools are built the other way around: they produce an
               answer and ask you to trust it. In almost every other industry
-              that trade is worth making. In audit it is worthless, because
-              an answer you cannot defend is not an answer at all.
+              that trade is worth making. In accounting and audit it is
+              worthless, because a figure you cannot defend is not a figure at
+              all.
             </p>
-            <p className="text-lg leading-[1.6] text-body">
+            <p className="type-body text-body">
               So we started from attribution rather than automation. Every
-              piece of work George does is authored, timestamped, evidenced
-              and reversible. He drafts. You decide. The file shows which of
-              you did what, and it will still show it in three years when
-              somebody asks.
+              piece of work George does — a drafted journal, a sampled
+              population, a completed procedure — is authored, timestamped,
+              evidenced and reversible. He prepares. You review. You sign. The
+              record shows which of you did what, and it will still show it in
+              three years when somebody asks.
             </p>
           </div>
         </div>
@@ -77,7 +81,7 @@ export function AboutWhy() {
           <AttributionStamp
             className="max-w-sm"
             preparedAt="09:42"
-            reviewedBy={{ name: "R. Adeyemi, Senior", at: "16:20" }}
+            reviewedBy={{ name: "A. Abdulrahman", at: "16:20" }}
           />
         </div>
       </div>

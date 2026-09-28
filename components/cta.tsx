@@ -47,7 +47,7 @@ export function Cta() {
           </>
         }
         description="Start on your own engagement today, or bring George to the whole firm."
-        primary={{ label: "Book a demo", href: "#contact" }}
+        primary={{ label: "Book a demo", href: "/contact" }}
         secondary={{ label: "Start free", href: "/sign-up" }}
       />
     </div>

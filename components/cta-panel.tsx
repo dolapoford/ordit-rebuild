@@ -15,7 +15,8 @@ type CtaAction = {
 
 type CtaPanelProps = {
   heading: ReactNode;
-  description: ReactNode;
+  /** Omit for a heading-only panel. */
+  description?: ReactNode;
   primary: CtaAction;
   secondary: CtaAction;
   /** Panel background — an image URL, a flat colour, or any CSS value. */
@@ -47,11 +48,13 @@ export function CtaPanel({
         )}
         style={panelStyle}
       >
-        <h2 className="type-h1 max-w-[44rem] text-ink">{heading}</h2>
+        <h2 className="type-h2 max-w-[44rem] text-ink">{heading}</h2>
 
-        <p className="type-body mt-6 max-w-[28rem] text-body">
-          {description}
-        </p>
+        {description && (
+          <p className="type-body mt-6 max-w-[28rem] text-body">
+            {description}
+          </p>
+        )}
 
         <div className="mt-10 flex flex-col gap-3 max-sm:w-full sm:flex-row sm:items-center">
           <Press hoverScale={1.03} className="max-sm:w-full">

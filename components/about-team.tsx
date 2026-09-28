@@ -8,9 +8,9 @@ import { useCardStagger } from "@/hooks/use-card-stagger";
 
 const TEAM = [
   { name: "Temidayo Dauda", role: "Founder", known: true },
-  { name: "Name to be supplied", role: "Audit lead · Chartered accountant", known: false },
-  { name: "Name to be supplied", role: "Engineering", known: false },
-  { name: "Name to be supplied", role: "Advisor · Practising auditor", known: false },
+  { name: "Practice", role: "Chartered accountants and practising auditors", known: true },
+  { name: "Engineering", role: "Systems built for regulated data", known: true },
+  { name: "Advisory", role: "Partners who still sign files", known: true },
 ];
 
 /** "Who builds it" — four-up team grid. Only the founder is named today;
@@ -28,8 +28,8 @@ export function AboutTeam() {
       <div className="mx-auto max-w-[1280px]">
         <div ref={headerRef} className="max-w-2xl">
           <p className="type-label text-violet">Who builds it</p>
-          <h2 className="type-h1 mt-5 text-ink">
-            Auditors and engineers, in the same room.
+          <h2 className="type-h2 mt-5 text-ink">
+            Accountants, auditors and engineers, in the same room.
           </h2>
         </div>
 

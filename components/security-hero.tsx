@@ -12,7 +12,6 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 export function SecurityHero() {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const lineRef = useRef<HTMLSpanElement>(null);
   const eyebrowTextRef = useRef<HTMLSpanElement>(null);
   const bodyRef = useRef<HTMLParagraphElement>(null);
 
@@ -22,8 +21,7 @@ export function SecurityHero() {
 
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      tl.fromTo(lineRef.current, { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, 0.1)
-        .from(eyebrowTextRef.current, { autoAlpha: 0, x: -8, duration: 0.4 }, "-=0.3")
+      tl.from(eyebrowTextRef.current, { autoAlpha: 0, y: 16, duration: 0.5 }, 0.1)
         .from(
           sectionRef.current?.querySelectorAll(".sec-hero-line") ?? [],
           { yPercent: 100, duration: 0.7, stagger: 0.08 },
@@ -50,14 +48,9 @@ export function SecurityHero() {
   );
 
   return (
-    <section ref={sectionRef} className="site-gutter bg-white py-20 md:py-28 lg:py-32">
+    <section ref={sectionRef} className="site-gutter bg-white site-section">
       <div ref={contentRef} className="mx-auto w-full max-w-[1280px]">
-        <p className="flex items-center gap-5 text-lg font-semibold text-violet">
-          <span
-            ref={lineRef}
-            aria-hidden
-            className="h-1 w-[72px] origin-left rounded-full bg-violet"
-          />
+        <p className="type-label text-violet">
           <span ref={eyebrowTextRef}>Security</span>
         </p>
 
@@ -72,10 +65,8 @@ export function SecurityHero() {
           </span>
         </h1>
 
-        <p ref={bodyRef} className="mt-8 max-w-[36rem] text-lg leading-[1.6] text-body lg:text-xl">
-          You hold confidential financial records under professional privilege.
-          Before any of it goes into a tool, you are entitled to a straight
-          answer about where it lives and who can see it.
+        <p ref={bodyRef} className="type-lead mt-8 max-w-[36rem] text-body">
+          You hold confidential financial records under professional privilege. Before you put any of it into a tool, you are entitled to a straight answer about where it lives, who can see it, and what happens when you leave.
         </p>
       </div>
     </section>

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { EnterpriseControls } from "@/components/enterprise-controls";
 import { Footer } from "@/components/footer";
 import { ForFirmsHero } from "@/components/for-firms-hero";
+import { ModulesPerFirm } from "@/components/modules-per-firm";
 import { Navbar } from "@/components/navbar";
 import { RfiCta } from "@/components/rfi-cta";
 import { ScaleStats } from "@/components/scale-stats";
@@ -21,6 +22,7 @@ export default function ForFirmsPage() {
       <Navbar />
       <main>
         <ForFirmsHero />
+         <ModulesPerFirm />
         <OrgMirrored />
         <EnterpriseControls />
         <Oversight />

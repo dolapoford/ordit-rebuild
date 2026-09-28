@@ -48,7 +48,8 @@ export function SecurityCta() {
   return (
     <div ref={scopeRef} className="contents">
       <CtaPanel
-        panelClassName="bg-violet-50"
+        panelClassName="bg-cover bg-center"
+        panelStyle={{ backgroundImage: "url(/Cta-bg.png)" }}
         heading="Take the security pack to your review."
         description="Architecture, hosting, sub-processors, certifications and policies — everything your committee will ask for."
         primary={{ label: "Request the security pack", href: "#contact", icon: false }}

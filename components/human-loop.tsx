@@ -46,9 +46,8 @@ export function HumanLoop() {
       <div className="mx-auto grid max-w-[1280px] items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10">
         {/* Copy */}
         <div ref={copyRef} className="flex flex-col">
-          <p className="type-label flex items-center gap-4 text-neutral-400">
+          <p className="type-label text-violet">
             Human in the loop, structurally
-            <span className="h-px w-14 bg-neutral-300" aria-hidden />
           </p>
 
           <h2 className="type-h2 mt-6 text-ink">

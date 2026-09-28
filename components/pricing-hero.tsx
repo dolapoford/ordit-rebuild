@@ -6,10 +6,8 @@ export function PricingHero() {
   return (
     <section className="site-gutter site-section relative overflow-hidden bg-neutral-25 text-center">
       <div className="relative mx-auto max-w-[46rem]">
-        <p className="type-label flex items-center justify-center gap-4 text-violet">
-          <span className="h-px w-10 bg-violet/40" aria-hidden />
+        <p className="type-label text-violet">
           Pricing
-          <span className="h-px w-10 bg-violet/40" aria-hidden />
         </p>
 
         <h1 className="type-display mt-6 text-ink">

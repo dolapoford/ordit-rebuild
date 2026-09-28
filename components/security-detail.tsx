@@ -115,7 +115,7 @@ export function SecurityDetail() {
         <div ref={leftRef}>
           <p className="type-label text-violet">In detail</p>
 
-          <h2 className="type-h1 mt-6 text-ink">
+          <h2 className="type-h2 mt-6 text-ink">
             The answers a <span className="text-violet">security review</span>{" "}
             asks for.
           </h2>

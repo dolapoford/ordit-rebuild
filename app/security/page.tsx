@@ -6,6 +6,7 @@ import { SecurityCta } from "@/components/security-cta";
 import { SecurityDetail } from "@/components/security-detail";
 import { SecurityHero } from "@/components/security-hero";
 import { SecurityPillars } from "@/components/security-pillars";
+import { SecuritySeparation } from "@/components/security-separation";
 
 export const metadata: Metadata = {
   title: "Security — OrditAI",
@@ -19,8 +20,9 @@ export default function SecurityPage() {
       <Navbar />
       <main>
         <SecurityHero />
-        <SecurityPillars />
+        <SecuritySeparation />
         <SecurityDetail />
+        <SecurityPillars />
         <SecurityCta />
       </main>
       <Footer />

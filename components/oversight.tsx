@@ -105,11 +105,10 @@ export function Oversight() {
     <section className="site-gutter site-section relative overflow-hidden bg-neutral-25">
       <div className="relative mx-auto max-w-[1280px]">
         <div ref={headerRef}>
-          <p className="type-label flex items-center gap-4 text-violet">
+          <p className="type-label text-violet">
             Oversight at every level
-            <span className="h-px w-12 bg-violet/60" aria-hidden />
           </p>
-          <h2 className="type-h1 mt-6 text-ink">
+          <h2 className="type-h2 mt-6 text-ink">
             See the engagement,
             <br className="hidden sm:block" /> the team and the{" "}
             <span className="text-violet">whole firm.</span>
@@ -124,9 +123,9 @@ export function Oversight() {
           {LEVELS.map(({ n, title, sub, icon: Icon, points }) => (
             <li
               key={title}
-              className="relative rounded-site border border-neutral-200 bg-white p-8"
+              className="relative rounded-site border border-neutral-200 bg-white card-pad"
             >
-              <span className="absolute right-8 top-8 text-base text-body/60">
+              <span className="absolute right-8 top-8 type-label text-neutral-400">
                 {n}
               </span>
               <span className="oversight-icon flex size-[74px] items-center justify-center rounded-full bg-violet-50 text-violet">

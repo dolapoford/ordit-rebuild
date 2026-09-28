@@ -9,7 +9,7 @@ import { useCardStagger } from "@/hooks/use-card-stagger";
 const CARDS = [
   {
     title: "Evidence room",
-    body: "Upload contracts, spreadsheets, decks and mail against an engagement, and add the data fields you need.",
+    body: "Upload contracts, spreadsheets, decks and mail against an engagement or a period, and add the data fields you need.",
     image: "/dashboard.png",
     alt: "Evidence files — contract, spreadsheet, email, deck and report — each marked as received, with an add-file slot",
   },
@@ -21,7 +21,7 @@ const CARDS = [
   },
   {
     title: "Activity trail",
-    body: "Audit activity is tracked across the engagement as the work happens.",
+    body: "Activity is tracked across the engagement and the ledger as the work happens.",
     image: "/timeline.png",
     alt: "A timeline of engagement activity: file uploaded, procedure updated, finding created, reviewed by partner",
   },
@@ -43,13 +43,11 @@ export function Defensible() {
     >
       <div className="mx-auto max-w-[1280px]">
         <div ref={headerRef} className="mx-auto max-w-4xl text-center">
-          <p className="type-label flex items-center justify-center gap-5 text-violet">
-            <span className="h-px w-14 bg-neutral-300" aria-hidden />
+          <p className="type-label text-violet">
             Defensible by construction
-            <span className="h-px w-14 bg-neutral-300" aria-hidden />
           </p>
 
-          <h2 className="type-h1 mt-6 text-ink">
+          <h2 className="type-h2 mt-6 text-ink">
             If it is in the file, you can{" "}
             <span className="text-violet">prove where it came from.</span>
           </h2>

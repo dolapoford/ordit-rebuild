@@ -7,20 +7,22 @@ import { Hero } from "@/components/hero";
 import { HumanLoop } from "@/components/human-loop";
 import { Navbar } from "@/components/navbar";
 import { WhoGeorgeIs } from "@/components/who-george-is";
-import { Workflow } from "@/components/workflow";
-
+import { Modules } from "@/components/modules";
+import { Hero2 } from "@/components/hero-2";
+import { GeorgeBand } from "@/components/george-band";
+import { EnterpriseDashboard } from "@/components/enterprise-dashboard";
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col bg-white">
       <Navbar />
 
       <main>
-        <Hero />
+        <Hero2 />
+        <Modules/>
+        <EnterpriseDashboard />
         <WhoGeorgeIs />
-        <Challenge />
-        {/* Workflow ("An audit engagement, end to end.") is intentionally
-            unanimated beyond its own existing pinned-scroll mechanics. */}
-        <Workflow />
+        <GeorgeBand/>
+        {/* <Challenge /> */}
         <HumanLoop />
         <Defensible />
         <ForFirms />

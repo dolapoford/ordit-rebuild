@@ -53,11 +53,10 @@ export function ForFirms() {
       <div className="mx-auto max-w-[1280px]">
         <div ref={headerRef} className="grid items-end gap-8 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
           <div>
-            <p className="ff-eyebrow type-label flex items-center gap-4 text-violet-300">
+            <p className="ff-eyebrow type-label text-violet-300">
               FOR FIRMS
-              <span className="h-px w-16 bg-violet-300/60" aria-hidden />
             </p>
-            <h2 className="type-h1 mt-6 text-white">
+            <h2 className="type-h2 mt-6 text-white">
               Built for the way audit firms{" "}
               <span className="text-violet-300">actually work.</span>
             </h2>
@@ -66,8 +65,7 @@ export function ForFirms() {
           <div>
             <p className="ff-desc type-body max-w-[32rem] text-white/70">
               Your organisation, your roles and your separation rules —
-              inherited from the identity you already use, and enforced on
-              every engagement.
+              inherited from the identity you already use.
             </p>
             <Press className="ff-cta mt-8 max-sm:w-full">
               <Link

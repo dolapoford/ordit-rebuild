@@ -73,8 +73,8 @@ export function Challenge() {
       <div className="mx-auto max-w-[1280px]">
         {/* Header */}
         <div ref={headerRef} className="mx-auto max-w-4xl text-center">
-          <p className="type-label text-neutral-400">The challenge</p>
-          <h2 className="type-h1 mt-5 text-ink">
+          <p className="type-label text-violet">The challenge</p>
+          <h2 className="type-h2 mt-5 text-ink">
             <span className="block overflow-hidden">
               <span className="challenge-line block">An audit isn&rsquo;t a prompt.</span>
             </span>
